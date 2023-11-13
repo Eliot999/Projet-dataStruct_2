@@ -1,4 +1,4 @@
-/home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -G Ninja -S /home/eliot/Documents/GitHub/Projet-dataStruct_2 -B /home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug
--- Configuring done (0.0s)
+C:\Users\eliot\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\Users\eliot\OneDrive - Efrei\Documents\GitHub\Projet-dataStruct_2" -B "C:\Users\eliot\OneDrive - Efrei\Documents\GitHub\Projet-dataStruct_2\cmake-build-debug"
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug
+-- Build files have been written to: C:/Users/eliot/OneDrive - Efrei/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug

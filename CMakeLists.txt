@@ -10,4 +10,6 @@ add_executable(Projet_dataStruct_2
         cell.h
         list.h
         tree.h
-        list.c)
+        list.c
+        set.h
+        set.c)
