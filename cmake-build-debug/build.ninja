@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/eliot/OneDrive$ -$ Efrei/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Projet_dataStruct_2
 
@@ -49,19 +49,19 @@ cmake_ninja_workdir = /home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-bui
 
 build cmake_object_order_depends_target_Projet_dataStruct_2: phony || CMakeFiles/Projet_dataStruct_2.dir
 
-build CMakeFiles/Projet_dataStruct_2.dir/cell.c.o: C_COMPILER__Projet_dataStruct_2_unscanned_Debug /home/eliot/Documents/GitHub/Projet-dataStruct_2/cell.c || cmake_object_order_depends_target_Projet_dataStruct_2
-  DEP_FILE = CMakeFiles/Projet_dataStruct_2.dir/cell.c.o.d
+build CMakeFiles/Projet_dataStruct_2.dir/main.c.obj: C_COMPILER__Projet_dataStruct_2_unscanned_Debug C$:/Users/eliot/OneDrive$ -$ Efrei/Documents/GitHub/Projet-dataStruct_2/main.c || cmake_object_order_depends_target_Projet_dataStruct_2
+  DEP_FILE = CMakeFiles\Projet_dataStruct_2.dir\main.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  INCLUDES = -I/home/eliot/Documents/GitHub/Projet-dataStruct_2/.
-  OBJECT_DIR = CMakeFiles/Projet_dataStruct_2.dir
-  OBJECT_FILE_DIR = CMakeFiles/Projet_dataStruct_2.dir
+  INCLUDES = -I"C:/Users/eliot/OneDrive - Efrei/Documents/GitHub/Projet-dataStruct_2/."
+  OBJECT_DIR = CMakeFiles\Projet_dataStruct_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Projet_dataStruct_2.dir
 
-build CMakeFiles/Projet_dataStruct_2.dir/list.c.o: C_COMPILER__Projet_dataStruct_2_unscanned_Debug /home/eliot/Documents/GitHub/Projet-dataStruct_2/list.c || cmake_object_order_depends_target_Projet_dataStruct_2
-  DEP_FILE = CMakeFiles/Projet_dataStruct_2.dir/list.c.o.d
+build CMakeFiles/Projet_dataStruct_2.dir/set.c.obj: C_COMPILER__Projet_dataStruct_2_unscanned_Debug C$:/Users/eliot/OneDrive$ -$ Efrei/Documents/GitHub/Projet-dataStruct_2/set.c || cmake_object_order_depends_target_Projet_dataStruct_2
+  DEP_FILE = CMakeFiles\Projet_dataStruct_2.dir\set.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  INCLUDES = -I/home/eliot/Documents/GitHub/Projet-dataStruct_2/.
-  OBJECT_DIR = CMakeFiles/Projet_dataStruct_2.dir
-  OBJECT_FILE_DIR = CMakeFiles/Projet_dataStruct_2.dir
+  INCLUDES = -I"C:/Users/eliot/OneDrive - Efrei/Documents/GitHub/Projet-dataStruct_2/."
+  OBJECT_DIR = CMakeFiles\Projet_dataStruct_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Projet_dataStruct_2.dir
 
 
 # =============================================================================
@@ -69,22 +69,24 @@ build CMakeFiles/Projet_dataStruct_2.dir/list.c.o: C_COMPILER__Projet_dataStruct
 
 
 #############################################
-# Link the executable Projet_dataStruct_2
+# Link the executable Projet_dataStruct_2.exe
 
-build Projet_dataStruct_2: C_EXECUTABLE_LINKER__Projet_dataStruct_2_Debug CMakeFiles/Projet_dataStruct_2.dir/cell.c.o CMakeFiles/Projet_dataStruct_2.dir/list.c.o
+build Projet_dataStruct_2.exe: C_EXECUTABLE_LINKER__Projet_dataStruct_2_Debug CMakeFiles/Projet_dataStruct_2.dir/main.c.obj CMakeFiles/Projet_dataStruct_2.dir/set.c.obj
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Projet_dataStruct_2.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Projet_dataStruct_2
-  TARGET_PDB = Projet_dataStruct_2.dbg
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Projet_dataStruct_2.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Projet_dataStruct_2.exe
+  TARGET_IMPLIB = libProjet_dataStruct_2.dll.a
+  TARGET_PDB = Projet_dataStruct_2.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug && /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D "C:\Users\eliot\OneDrive - Efrei\Documents\GitHub\Projet-dataStruct_2\cmake-build-debug" && C:\Users\eliot\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -95,7 +97,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug && /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/eliot/Documents/GitHub/Projet-dataStruct_2 -B/home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D "C:\Users\eliot\OneDrive - Efrei\Documents\GitHub\Projet-dataStruct_2\cmake-build-debug" && C:\Users\eliot\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -S"C:\Users\eliot\OneDrive - Efrei\Documents\GitHub\Projet-dataStruct_2" -B"C:\Users\eliot\OneDrive - Efrei\Documents\GitHub\Projet-dataStruct_2\cmake-build-debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -105,15 +107,17 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build Projet_dataStruct_2: phony Projet_dataStruct_2.exe
+
 # =============================================================================
 # Folder targets.
 
 # =============================================================================
 
 #############################################
-# Folder: /home/eliot/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug
+# Folder: C:/Users/eliot/OneDrive - Efrei/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug
 
-build all: phony Projet_dataStruct_2
+build all: phony Projet_dataStruct_2.exe
 
 # =============================================================================
 # Built-in targets
@@ -122,14 +126,14 @@ build all: phony Projet_dataStruct_2
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-C.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /home/eliot/Documents/GitHub/Projet-dataStruct_2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/eliot/OneDrive$ -$ Efrei/Documents/GitHub/Projet-dataStruct_2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-C.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /home/eliot/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /home/eliot/Documents/GitHub/Projet-dataStruct_2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Users/eliot/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/eliot/OneDrive$ -$ Efrei/Documents/GitHub/Projet-dataStruct_2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################

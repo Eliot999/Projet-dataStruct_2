@@ -1,7 +1,10 @@
-
-
-typedef struct s_cell{
+#ifndef CELL_H
+#define CELL_H
+typedef struct d_cell{
     int value;
-    unsigned int nb_lvl;
-    struct s_cell** nexts;
+    int level;
+    struct d_cell** next;
 } s_cell;
+
+
+#endif

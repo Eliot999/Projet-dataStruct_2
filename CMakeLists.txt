@@ -6,10 +6,9 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(Projet_dataStruct_2
-        cell.c
         cell.h
         list.h
-        tree.h
-        list.c
+        main.c
+        set.c
         set.h
-        set.c)
+        tree.h)

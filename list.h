@@ -1,7 +1,11 @@
+#ifndef LIST_H
+#define LIST_H
 #include "cell.h"
 
-typedef struct l_list{
-    unsigned int max_lvl;
-    struct cell** heads;
+typedef struct d_list{
+    int max_level;
+    struct d_cell** heads;
 } l_list;
+
+#endif
 
