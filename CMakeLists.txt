@@ -6,9 +6,8 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(Projet_dataStruct_2
-        cell.h
-        list.h
         main.c
         set.c
         set.h
-        tree.h)
+        tree.h
+        "timer.c")
