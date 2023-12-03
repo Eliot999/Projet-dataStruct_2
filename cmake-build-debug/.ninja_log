@@ -1,12 +1,13 @@
 # ninja log v5
-3	114	7232969785415296	CMakeFiles/Projet_dataStruct_2.dir/main.c.obj	5387af4075c79a37
-3	139	7232989845147786	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	a5982abc9ff8f157
-140	259	7232989846306357	Projet_dataStruct_2.exe	a4dcdc82288b813a
-1	213	7233044139655651	build.ninja	4b8ababc7f938cf4
-15	136	7232466194304638	CMakeFiles/Projet_dataStruct_2.dir/timer.c.obj	f53f4c2dc9e6df6c
-6	133	7233044512936214	CMakeFiles/Projet_dataStruct_2.dir/main.c.obj	992b6162ef1e3a64
-11	154	7233044513151534	CMakeFiles/Projet_dataStruct_2.dir/timer.c.obj	54f1e78a54d9671a
-1	160	7233044513221540	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	6d75a07574e23b18
-160	303	7233044514616710	Projet_dataStruct_2.exe	b4f8e939335f6880
-4	114	7233045495539822	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	6d75a07574e23b18
-115	212	7233045496469957	Projet_dataStruct_2.exe	b4f8e939335f6880
+0	120	7233073104330700	CMakeFiles/Projet_dataStruct_2.dir/main.c.obj	992b6162ef1e3a64
+12	146	7233073104590662	CMakeFiles/Projet_dataStruct_2.dir/timer.c.obj	54f1e78a54d9671a
+7	146	7233073104590662	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	6d75a07574e23b18
+147	255	7233073105606122	Projet_dataStruct_2.exe	b4f8e939335f6880
+2	147	7233076055255159	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	6d75a07574e23b18
+148	278	7233076056490502	Projet_dataStruct_2.exe	b4f8e939335f6880
+3	92	7233076329563786	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	6d75a07574e23b18
+92	180	7233076330408911	Projet_dataStruct_2.exe	b4f8e939335f6880
+3	113	7233076512330609	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	6d75a07574e23b18
+113	215	7233076513315856	Projet_dataStruct_2.exe	b4f8e939335f6880
+2	91	7233077126327732	CMakeFiles/Projet_dataStruct_2.dir/set.c.obj	6d75a07574e23b18
+92	181	7233077127194073	Projet_dataStruct_2.exe	b4f8e939335f6880

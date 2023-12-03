@@ -54,7 +54,7 @@ void insertSortedCell(l_list *list, int value, int level) {
         }
     } else {
         // Iterate through each level up to the given level
-        for (int i = 0; i <= level; i++) {
+        for (int i = 0; i <= level-1; i++) {
             s_cell *ptr = list->heads[i];
             s_cell *previous = NULL;
 
@@ -115,25 +115,45 @@ void displayLevel(l_list list, int lvl) {
 
     printf("NULL\n");
 }
+
+int* create_level_array(int n) {
+    // Calculer la taille du tableau
+    int size = pow(2, n) - 1;
+    // Allouer de la mémoire pour le tableau
+    int* levels = malloc(size * sizeof(int));
+    // Initialiser le tableau à 0
+    for (int i = 0; i < size; i++) {
+        levels[i] = 0;
+    }
+    // Ajouter 1 à chaque 2ème, 4ème, 8ème, etc. cellule
+    for (int step = 2; step <= size; step *= 2) {
+        for (int i = step - 1; i < size; i += step) {
+            levels[i]++;
+        }
+    }
+    // Retourner le tableau
+    return levels;
+}
+void print_array(int* array, int size) {
+    printf("[");
+    for (int i = 0; i < size; i++) {
+        printf("%d", array[i]);
+        if (i < size - 1) {
+            printf(", ");
+        }
+    }
+    printf("]\n");
+}
  l_list * createnlvllist(int n)
 {
     int size=pow(2,n)-1;
-    int* array=(int*) malloc(size * sizeof(int));
-    for (int i=0;i<=size;i++)
-    {
-        array[i]=0;
-    }//initialisation
-    for (int step=1;step<=n;step++)
-    {
-        for(int i=0;i<=size;i+=pow(2,step))
-        {
-            array[i]+=1;
-        }
-    }
-    l_list * nlevellist= createEmptyList(n);
+    int * levels=create_level_array(n);
+    print_array(levels,size);
+    l_list * nlevellist= createEmptyList(size);
     for (int i=0;i<size;i++)
     {
-        insertSortedCell(nlevellist,i+1,i);
+        printf("inserting %d at level %d\n",i+1,levels[i]);
+        insertSortedCell(nlevellist,i+1,levels[i]);
     }
     return nlevellist;
 }

@@ -8,10 +8,11 @@ int main(){
     insertSortedCell(list,1,2);
     insertSortedCell(list,2,4);
     insertSortedCell(list,6,3);
-    simpledisplayList(*list);
+    //simpledisplayList(*list);
     //displayLevel(*list,0);
     classicsearch(list,6);
-    createnlvllist(3);
+    l_list * list2 = createnlvllist(3);
+    simpledisplayList(*list2);
     return 0;
 }
 

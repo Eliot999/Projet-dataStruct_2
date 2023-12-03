@@ -9,5 +9,6 @@ add_executable(Projet_dataStruct_2
         main.c
         set.c
         set.h
-        tree.h
-        "timer.c")
+        timer.c
+        timer.h
+        tree.h)

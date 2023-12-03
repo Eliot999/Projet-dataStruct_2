@@ -5,6 +5,6 @@ C:\Users\eliot\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCM
 -- Check for working C compiler: C:/Users/eliot/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (1.8s)
+-- Configuring done (0.8s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/eliot/OneDrive - Efrei/Documents/GitHub/Projet-dataStruct_2/cmake-build-debug
