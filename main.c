@@ -35,7 +35,7 @@ int main(){
         }
         stopTimer();
         time_all_levels=getTimeAsString();
-        printf("classic linked list search: %s\nlevel search: %s",time_lvl0,time_all_levels);
+        printf("\n%d level level list:\n-classic linked list search: %s s\n-optimised level search: %s s",level,time_lvl0,time_all_levels);
         fprintf(log_file,format,level,time_lvl0, time_all_levels);
     }
     fclose(log_file);

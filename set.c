@@ -146,13 +146,9 @@ l_list * createnlvllist(int n)
     return nlevellist;
 }
 s_cell* classicsearch(l_list* list, int value) {
-
-    int found = 0;
     s_cell* ptr = list->heads[0];
-
     while (ptr != NULL) {
         if (ptr->value == value) {
-            found = 1;
             return ptr;
         }
         ptr = ptr->next[0];
