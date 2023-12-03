@@ -11,4 +11,6 @@ add_executable(Projet_dataStruct_2
         set.h
         timer.c
         timer.h
-        tree.h)
+        tree.h
+        diary.h
+        diary.c)
