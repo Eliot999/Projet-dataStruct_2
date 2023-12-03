@@ -145,7 +145,7 @@ l_list * createnlvllist(int n)
     }
     return nlevellist;
 }
-void classicsearch(l_list* list, int value) {
+s_cell* classicsearch(l_list* list, int value) {
 
     int found = 0;
     s_cell* ptr = list->heads[0];
@@ -153,46 +153,27 @@ void classicsearch(l_list* list, int value) {
     while (ptr != NULL) {
         if (ptr->value == value) {
             found = 1;
-            break; // Exit the loop when the value is found
+            return ptr;
         }
         ptr = ptr->next[0];
     }
-
-    /*if (found) {
-        printf("Value %d found.\n", value);
-    } else {
-        printf("Value %d not found.\n", value);
-    }*/
-    return;
+    return NULL;
 }
-//make a search in the list and return the level of the cell using the concept of the skip list
-//if the value is not found return -1
-int advancedsearch(l_list* list, int value) {
-    int found = 0;
-    int level = list->max_level - 1;
-    s_cell *ptr = list->heads[level];
-
-    while (level >= 0) {
-        while (ptr != NULL) {
-            if (ptr->value == value) {
-                found = 1;
-                break; // Exit the loop when the value is found
-            }
-            ptr = ptr->next[level];
-        }
-        if (found) {
-            break;
-        }
-        level--;
-        ptr = list->heads[level];
-    }
-
-    /*if (found) {
-        printf("Value %d found at level %d.\n", value, level);
-    } else {
-        printf("Value %d not found.\n", value);
-    }*/
-    return found;
+s_cell* advancedsearch(l_list list, int value)
+{
+    int Level = list.max_level - 1;
+    s_cell *current = list.heads[Level];
+    if (list.heads == NULL) return NULL;
+    do
+    {
+        if (current->value == value)
+            return current;
+        if (Level > 0 && current->value > value)
+            current = list.heads[--Level];
+        else
+            current = current->next[0];
+    } while (current != NULL);
+    return NULL;
 }
 
 int generaterandom(int min,int max)
