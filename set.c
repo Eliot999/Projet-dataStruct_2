@@ -165,27 +165,36 @@ void classicsearch(l_list* list, int value) {
     }*/
     return;
 }
-
-void advancedsearch(l_list* list, int value) {
+//make a search in the list and return the level of the cell using the concept of the skip list
+//if the value is not found return -1
+int advancedsearch(l_list* list, int value) {
+    int found = 0;
     int level = list->max_level - 1;
-    s_cell* current = list->heads[level];
+    s_cell *ptr = list->heads[level];
 
-    while (current != NULL && level >= 0) {
-        if (current->value == value) {
-            //printf("Value %d found.\n", value);
-            return;
-        } else if (current->value < value && current->next[level] != NULL) {
-            current = current->next[level];
-        } else {
-            level--;
-            if (level >= 0) {
-                current = list->heads[level];
+    while (level >= 0) {
+        while (ptr != NULL) {
+            if (ptr->value == value) {
+                found = 1;
+                break; // Exit the loop when the value is found
             }
+            ptr = ptr->next[level];
         }
+        if (found) {
+            break;
+        }
+        level--;
+        ptr = list->heads[level];
     }
 
-    //printf("Value %d not found.\n", value);
+    /*if (found) {
+        printf("Value %d found at level %d.\n", value, level);
+    } else {
+        printf("Value %d not found.\n", value);
+    }*/
+    return found;
 }
+
 int generaterandom(int min,int max)
 {
     return min + rand() % (max- min +1);
