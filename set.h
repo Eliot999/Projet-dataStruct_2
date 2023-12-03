@@ -1,5 +1,7 @@
 #include "timer.h"
-
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
 typedef struct d_cell{
     int value;
     int level;
@@ -19,3 +21,5 @@ void simpledisplayList(l_list list);
 void displayLevel(l_list list, int lvl);
 void classicsearch(l_list* list,int value);
 l_list * createnlvllist(int n);
+void advancedsearch(l_list* list, int value);
+int generaterandom(int min,int max);
