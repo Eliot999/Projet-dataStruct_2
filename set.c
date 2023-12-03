@@ -19,23 +19,7 @@ l_list * createEmptyList(int max_level){
     }
     return list;
 }
-//insert cell in a sorted way using the concept of levels
-// Une fonction pour créer une nouvelle cellule avec une valeur et un niveau donnés
-s_cell* create_cell(int value, int level) {
-    // On alloue de la mémoire pour la cellule
-    s_cell* cell = malloc(sizeof(s_cell));
-    // On initialise la valeur et le niveau de la cellule
-    cell->value = value;
-    cell->level = level;
-    // On alloue de la mémoire pour le tableau de pointeurs vers les cellules suivantes
-    cell->next = (s_cell**)malloc(sizeof(s_cell) * (level + 1));
-    // On initialise tous les pointeurs à NULL
-    for (int i = 0; i <= level; i++) {
-        cell->next[i] = NULL;
-    }
-    // On retourne la cellule créée
-    return cell;
-}
+
 
 void insertHead(l_list * list, int value, int level) {
     if (level > list->max_level || level < 0) {
