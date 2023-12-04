@@ -2,8 +2,10 @@
 s_cell * createCell(int value, int level){
     s_cell * cell = (s_cell *) malloc(sizeof(s_cell));
     cell->value = value;
-    cell->next = malloc(sizeof(s_cell*)*level);
-    cell->level=level;
+    cell->next = (s_cell **) malloc(sizeof(s_cell )*(level));
+    for (int i = 0; i < level; i++) {
+        cell->next[i] = NULL;
+    }
     return cell;
 }
 
