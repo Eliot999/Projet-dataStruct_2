@@ -2,7 +2,7 @@
 s_cell * createCell(int value, int level){
     s_cell * cell = (s_cell *) malloc(sizeof(s_cell));
     cell->value = value;
-    cell->next = (s_cell **) malloc(sizeof(s_cell )*(level));
+    cell->next = (s_cell **) calloc(level,sizeof(s_cell));
     for (int i = 0; i < level; i++) {
         cell->next[i] = NULL;
     }
@@ -12,7 +12,7 @@ s_cell * createCell(int value, int level){
 l_list * createEmptyList(int max_level){
     l_list *list = malloc(sizeof(l_list));
     list->max_level = max_level;
-    list->heads =  malloc(sizeof(s_cell *) * max_level);
+    list->heads =  calloc(max_level,sizeof(s_cell));
     for(int i = 0; i < max_level; i++){
         list->heads[i] = NULL;
     }
@@ -143,7 +143,7 @@ l_list * createnlvllist(int n)
     for (int i=0;i<size;i++)
     {
         //printf("inserting %d at level %d\n",i+1,levels[i]);
-        insertSortedCell(nlevellist,i+1,levels[i]);
+        insertSortedCell2(nlevellist,i+1,levels[i]);
     }
     return nlevellist;
 }
@@ -177,4 +177,50 @@ s_cell* advancedsearch(l_list list, int value)
 int generaterandom(int min,int max)
 {
     return min + rand() % (max- min +1);
+}
+
+void insertSortedCell2(l_list * list,int value,int level)
+{
+    s_cell *prev = NULL;
+    s_cell *cell = createCell(value, level);
+    s_cell *current = list->heads[level];
+    if (level < 0 )printf(" level too low.");
+    if (level > list->max_level)printf("level too high");
+    while (level>=0)
+    {
+        if(list->heads[level]==NULL)
+        {
+            list->heads[level--]=cell;
+            current=list->heads[level];
+            prev=NULL;
+        }
+        else{
+            if  (current->value > value) {
+                cell->next = list->heads[level];
+                list->heads[level] = cell;
+                current = list->heads[--level];
+                prev=NULL;
+            } else {
+                if (current->next == NULL) {
+                    current->next = cell;
+                    current = current->next[--level];
+                }
+                else if (current->value > value && prev->value < value) {
+                    prev->next[level]=cell;
+                    cell->next[level--]=current;
+                } else {
+                    prev=current;
+                    current = current->next[level];
+
+                }
+            }
+        }
+    }
+
+}
+
+char* scanString(void) {
+    char *string = malloc(sizeof(char) * 50);
+    scanf("%s", string);
+    return string;
 }

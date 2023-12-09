@@ -23,3 +23,4 @@ s_cell* classicsearch(l_list* list,int value);
 l_list * createnlvllist(int n);
 s_cell* advancedsearch(l_list list, int value);
 int generaterandom(int min,int max);
+void insertSortedCell2(l_list * list,int value,int level);

@@ -1,7 +1,7 @@
 #include "diary.h"
 
 char *scanString(void) {
-    char *string = malloc(sizeof(char) * 100);
+    char *string = calloc(100,sizeof(char));
     scanf("%s", string);
     return string;
 }

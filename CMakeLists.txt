@@ -13,4 +13,11 @@ add_executable(Projet_dataStruct_2
         timer.h
         tree.h
         diary.h
-        diary.c)
+        diary.c
+        contact.h
+        contact.c
+        contact.h
+        appointement.c
+        appointement.h
+        calendar.h
+        calendar.c)
