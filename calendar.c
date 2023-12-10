@@ -63,6 +63,8 @@ void insertcell(c_l_list* list,calendar cal)
     }
     else
     {
+        current=list->heads[3];
+
         //first check if there is already the first letter in the level 3 if not insert level 0 1 2 3
         //second insert sorted level 0 1 2 all the contacts that have the same 1st letters but a different second
         //third step insert sorted level 0 1 all of those having the first 2 letters in common but 3rd different
