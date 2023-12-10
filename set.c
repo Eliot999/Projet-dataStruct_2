@@ -143,7 +143,7 @@ l_list * createnlvllist(int n)
     for (int i=0;i<size;i++)
     {
         //printf("inserting %d at level %d\n",i+1,levels[i]);
-        insertSortedCell2(nlevellist,i+1,levels[i]);
+        insertSortedCell(nlevellist,i+1,levels[i]);
     }
     return nlevellist;
 }

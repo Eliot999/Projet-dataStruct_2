@@ -23,9 +23,9 @@ char* GetContactFromCalendar(calendar cal){
 }
 
 c_cell * CreateCalendarCell(calendar* c, int level){
-    c_cell * ccell = (s_cell *) malloc(sizeof(s_cell));
+    c_cell * ccell = (c_cell *) malloc(sizeof(s_cell));
     ccell->cal = *c;
-    ccell->next = (s_cell **) calloc(level,sizeof(s_cell));
+    ccell->next = (c_cell *) calloc(level,sizeof(s_cell));
     for (int i = 0; i < level; i++) {
         ccell->next[i] = NULL;
     }
@@ -69,12 +69,12 @@ void insertcell(c_l_list* list, calendar* cal) {
         }
         return;
     }
-
     while (current != NULL) {
         char* s2 = GetContactFromCalendar(prev->cal);
         char* s3 = GetContactFromCalendar(current->cal);
 
         if (strcmp(s1, s2) > 0 && strcmp(s1, s3) < 0) {
+            //if there are a previous contact with a first letter before in the alphabet and a one with a letter after then we can insert it
             c_cell* cell = CreateCalendarCell(cal, 3);
             prev->next = cell;
             cell->next = current;
@@ -100,8 +100,8 @@ void insertcell(c_l_list* list, calendar* cal) {
                     }
                 }
             }
-            return;
         } else if (current->next == NULL && strcmp(s1, s3) > 0) {
+            //case 2  if it's after every other cells and there isn't the letter
             c_cell* cell = CreateCalendarCell(cal, 3);
             current->next = cell;
 
@@ -126,10 +126,20 @@ void insertcell(c_l_list* list, calendar* cal) {
                     }
                 }
             }
-            return;
         } else {
             prev = current;
             current = current->next;
+        }
+        prev=NULL;
+        current=list->heads[0];
+        while(current!=NULL)
+        {
+            // check if there are words with the same first letter and insert it at the level2 if not yet
+            char* s3= GetContactFromCalendar(current->cal);
+            if((strcmp(&s1[0],&s3[0])==0)&&(strcmp(&s1[1],&s3[1])!=0))
+            {
+
+            }
         }
     }
 }
@@ -139,16 +149,16 @@ void displayCalendarList(c_l_list list)
     for (int i = 0; i < 4; i++) {
         printf("list_head_%d @-]-->", i);
 
-        s_cell *cell = list.heads[i];
+        c_cell *cell = list.heads[i];
         while (cell != NULL) {
-            printf("[%d|@-]-->", cell->value);
+            printf("[%s_%s|@-]-->", cell->cal.Contact.name,cell->cal.Contact.surname);
             cell = cell->next[i];
         }
 
         printf("NULL\n");
     }
 }
-}
+
 
 
 
