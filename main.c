@@ -109,7 +109,7 @@ int main(){
 
     //PART 2
 
-
+    */
     FILE *log_file = fopen("log.txt", "w");
     if (log_file == NULL) {
         printf("Error opening file!\n");
@@ -146,12 +146,12 @@ int main(){
     }
 
     fclose(log_file);
-    */
+    /*
     char* s1=scanString();
     char* s2=scanString();
     contact* ctcte= create_contact(s1,s2);
     calendar* cal= create_calendarentry(*ctcte);
 
-
+    */
     return 0;
 }

@@ -8,7 +8,7 @@ typedef struct d_cell{
     struct d_cell** next;
 } s_cell;
 
-typedef struct d_list{
+typedef struct l_list{
     int max_level;
     struct d_cell** heads;
 } l_list;

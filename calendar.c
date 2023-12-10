@@ -23,9 +23,9 @@ char* GetContactFromCalendar(calendar cal){
 }
 
 c_cell * CreateCalendarCell(calendar* c, int level){
-    c_cell * ccell = (c_cell *) malloc(sizeof(s_cell));
+    c_cell * ccell =malloc(sizeof(s_cell));
     ccell->cal = *c;
-    ccell->next = (c_cell *) calloc(level,sizeof(s_cell));
+    ccell->next = malloc(sizeof(s_cell));
     for (int i = 0; i < level; i++) {
         ccell->next[i] = NULL;
     }
@@ -45,7 +45,7 @@ c_l_list* CreateCalendarllist()
 
     }
 }
-
+/*
 void insertcell(c_l_list* list, calendar* cal) {
     char* s1 = GetContactFromCalendar(*cal);
 
@@ -134,10 +134,12 @@ void insertcell(c_l_list* list, calendar* cal) {
         current=list->heads[0];
         while(current!=NULL)
         {
-            // check if there are words with the same first letter and insert it at the level2 if not yet
+            // check if there are words with the same first letter and update the word with the same value as the input, inserting the other calendar at the level2 if not yet
             char* s3= GetContactFromCalendar(current->cal);
             if((strcmp(&s1[0],&s3[0])==0)&&(strcmp(&s1[1],&s3[1])!=0))
             {
+                current=list->heads[2];
+                prev=NULL;
 
             }
         }
@@ -159,12 +161,9 @@ void displayCalendarList(c_l_list list)
     }
 }
 
-
-
-
 //first check if there is already the first letter in the level 3 linked list if not insert level 0 1 2 3
 //second insert sorted level 0 1 2 all the contacts that have the same 1st letters but a different second
 //third step insert sorted level 0 1 all of those having the first 2 letters in common but 3rd different
-//fourth insert sorted level 0 all the cells
+//fourth insert sorted level 0 all the cells*/
 
 
