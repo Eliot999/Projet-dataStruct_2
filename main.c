@@ -2,6 +2,92 @@
 #include "diary.h"
 #include <stdlib.h>
 #include <stdio.h>
+
+#include <stdio.h>
+
+int printMenuAndGetChoice() {
+    int choice;
+
+    printf("Diary Management System\n");
+    printf("=======================\n");
+    printf("1. Search for a contact\n");
+    printf("2. View a contact's appointments\n");
+    printf("3. Create a new contact\n");
+    printf("4. Create a new appointment\n");
+    printf("5. Delete an appointment\n");
+    printf("6. Save appointments to file\n");
+    printf("7. Load appointments from file\n");
+    printf("8. Trace complexity of operations\n");
+    printf("9. Exit\n");
+    printf("Please enter your choice: ");
+
+    //using the scanstin function to get the choice
+    char * input = scanString();
+    choice = atoi(input);
+    free(input);
+
+
+    return choice; // Return the user's choice for further processing
+}
+
+
+
+
+int validateSearchContactInput(char* input) {
+    // Validate the search input for contact (e.g., non-empty, valid characters).
+     if (input == NULL) {
+        printf("Invalid input.\n");
+        return 0;
+     }
+
+
+}
+int validateViewAppointmentsInput(char* contactName) {
+    // Validate the input for viewing appointments (e.g., contact exists).
+    if (contactName == NULL) {
+        printf("Invalid input.\n");
+        return 0;
+    }
+}
+int validateCreateContactInput(char* surname, char* firstname) {
+    // Validate inputs for creating a new contact (e.g., non-empty, unique name).
+    if (surname == NULL || firstname == NULL) {
+        printf("Invalid input.\n");
+        return 0;
+    }
+}
+int validateCreateAppointmentInput(Appointment appointment) {
+    // Validate the details of the new appointment (e.g., valid date and time).
+    if (appointment.day < 1 || appointment.day > 31) {
+        printf("Invalid day.\n");
+        return 0;
+    }
+}
+int validateDeleteAppointmentInput(char* contactName, Appointment appointment) {
+    // Validate input for deleting an appointment (e.g., appointment exists for contact).
+    if (contactName == NULL) {
+        printf("Invalid input.\n");
+        return 0;
+    }
+}
+int validateSaveAppointmentsInput(char* filename) {
+    // Validate the filename for saving appointments (e.g., valid file path).
+    if (filename == NULL) {
+        printf("Invalid input.\n");
+        return 0;
+    }
+}
+
+int validateLoadAppointmentsInput(char* filename) {
+    // Validate the filename for loading appointments (e.g., file exists).
+    if (filename == NULL) {
+        printf("Invalid input.\n");
+        return 0;
+    }
+}
+
+
+
 int main(){
     /*
     l_list * list = createEmptyList(5);
@@ -23,6 +109,10 @@ int main(){
     */
 
     //PART 2
+
+
+
+
 
 
     FILE *log_file = fopen("log.txt", "w");
