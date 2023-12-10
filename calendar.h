@@ -10,7 +10,7 @@ typedef struct{
 }calendar;
 
 typedef struct{
-    calendar* cal;
+    calendar cal;
     int level;
     struct c_cell** next;
 }c_cell;

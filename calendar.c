@@ -63,9 +63,34 @@ void insertcell(c_l_list* list,calendar* cal)
     }
     else
     {
-        current=list->heads[3];
 
-        //first check if there is already the first letter in the level 3 if not insert level 0 1 2 3
+        c_cell* prev=NULL;
+        current=list->heads[3];
+        char* sh= GetContactFromCalendar(current->cal);
+        if(strcmp(s1,sh)<0)
+        {
+            c_cell* cell= CreateCalendarCell(cal,3);
+            for (int i=3;i>=0;i--){
+                cell->next=list->heads[i];
+                list->heads[i]=cell;}
+        }
+        else {
+            while (current != NULL) {
+                char *s2 = GetContactFromCalendar(prev->cal);
+                char *s3 = GetContactFromCalendar(current->cal);
+                if (strcmp(&s1[0], &s2[0]) > 0 && strcmp(&s1[0], &s3[0]) < 0) {
+                    c_cell *cell = CreateCalendarCell(cal, 3);
+                    prev->next = cell;
+                    cell->next = current;
+                    return;
+                } else {
+                    prev = current;
+                    current = current->next;
+                }
+            }
+        }
+
+        //first check if there is already the first letter in the level 3 linked list if not insert level 0 1 2 3
         //second insert sorted level 0 1 2 all the contacts that have the same 1st letters but a different second
         //third step insert sorted level 0 1 all of those having the first 2 letters in common but 3rd different
         //fourth insert sorted level 0 all the cells
