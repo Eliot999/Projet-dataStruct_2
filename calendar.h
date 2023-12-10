@@ -25,5 +25,5 @@ c_l_list* createcalendarllist();
 
 calendar* create_calendarentry(contact Contact);
 char* GetContactFromCalendar(calendar cal);
-void insertcell(c_l_list* list,calendar cal);
+void insertcell(c_l_list* list,calendar* cal);
 #endif //PROJET_DATASTRUCT_2_CALENDAR_H

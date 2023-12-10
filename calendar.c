@@ -48,14 +48,14 @@ c_l_list* CreateCalendarllist()
     }
 }
 
-void insertcell(c_l_list* list,calendar cal)
+void insertcell(c_l_list* list,calendar* cal)
 {
     c_cell* current=list->heads[0];
     c_cell* prev=NULL;
-    char* s1= GetContactFromCalendar(cal);
-    c_cell* cell=CreateCalendarCell(cal);
+    char* s1= GetContactFromCalendar(*cal);
     if (list->heads[0]==NULL)
     {
+        c_cell* cell=CreateCalendarCell(cal,3);
         for(int i=0;i<=3;i++)
         {
             list->heads[i]=cell;
