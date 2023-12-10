@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "calendar.h"
-/*
+
 int printMenuAndGetChoice() {
     int choice;
 
@@ -39,6 +39,8 @@ int validateSearchContactInput(char* input) {
         return 0;
      }
 
+     return 1;
+
 
 }
 int validateViewAppointmentsInput(char* contactName) {
@@ -47,6 +49,7 @@ int validateViewAppointmentsInput(char* contactName) {
         printf("Invalid input.\n");
         return 0;
     }
+    return 1;
 }
 int validateCreateContactInput(char* surname, char* firstname) {
     // Validate inputs for creating a new contact (e.g., non-empty, unique name).
@@ -54,6 +57,7 @@ int validateCreateContactInput(char* surname, char* firstname) {
         printf("Invalid input.\n");
         return 0;
     }
+    return 1;
 }
 int validateCreateAppointmentInput(Appointment appointment) {
     // Validate the details of the new appointment (e.g., valid date and time).
@@ -61,6 +65,36 @@ int validateCreateAppointmentInput(Appointment appointment) {
         printf("Invalid day.\n");
         return 0;
     }
+    if (appointment.month < 1 || appointment.month > 12) {
+        printf("Invalid month.\n");
+        return 0;
+    }
+    if (appointment.year < 2023) {
+        printf("Invalid year.\n");
+        return 0;
+    }
+    if (appointment.start_hour < 0 || appointment.start_hour > 23) {
+        printf("Invalid start hour.\n");
+        return 0;
+    }
+    if (appointment.start_minute < 0 || appointment.start_minute > 59) {
+        printf("Invalid start minute.\n");
+        return 0;
+    }
+    if (appointment.duration_hour < 0 || appointment.duration_hour > 23) {
+        printf("Invalid duration hour.\n");
+        return 0;
+    }
+    if (appointment.duration_minute < 0 || appointment.duration_minute > 59) {
+        printf("Invalid duration minute.\n");
+        return 0;
+    }
+    if (appointment.purpose == NULL) {
+        printf("Invalid purpose.\n");
+        return 0;
+    }
+    return 1;
+
 }
 int validateDeleteAppointmentInput(char* contactName, Appointment appointment) {
     // Validate input for deleting an appointment (e.g., appointment exists for contact).
@@ -68,6 +102,7 @@ int validateDeleteAppointmentInput(char* contactName, Appointment appointment) {
         printf("Invalid input.\n");
         return 0;
     }
+    return 1;
 }
 int validateSaveAppointmentsInput(char* filename) {
     // Validate the filename for saving appointments (e.g., valid file path).
@@ -75,6 +110,8 @@ int validateSaveAppointmentsInput(char* filename) {
         printf("Invalid input.\n");
         return 0;
     }
+
+    return 1;
 }
 
 int validateLoadAppointmentsInput(char* filename) {
@@ -83,10 +120,11 @@ int validateLoadAppointmentsInput(char* filename) {
         printf("Invalid input.\n");
         return 0;
     }
+    return 1;
 }
 
 
-*/
+
 int main(){
     /*
     l_list * list = createEmptyList(5);
