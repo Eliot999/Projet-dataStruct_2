@@ -180,8 +180,3 @@ int generaterandom(int min,int max)
 }
 
 
-char* scanString(void) {
-    char *string = malloc(sizeof(char) * 50);
-    scanf("%s", string);
-    return string;
-}

@@ -2,6 +2,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+#ifndef PROJET_DATASTRUCT_2_SET_H
+#define PROJET_DATASTRUCT_2_SET_H
 typedef struct d_cell{
     int value;
     int level;
@@ -23,4 +26,6 @@ s_cell* classicsearch(l_list* list,int value);
 l_list * createnlvllist(int n);
 s_cell* advancedsearch(l_list list, int value);
 int generaterandom(int min,int max);
+
+#endif //PROJET_DATASTRUCT_2_SET_H
 
