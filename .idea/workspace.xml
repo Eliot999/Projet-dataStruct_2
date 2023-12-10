@@ -22,8 +22,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8de5904d-495b-4c3e-9f26-670b0a1b9d42" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointement.c" beforeDir="false" afterPath="$PROJECT_DIR$/appointement.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointement.h" beforeDir="false" afterPath="$PROJECT_DIR$/appointement.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendar.c" beforeDir="false" afterPath="$PROJECT_DIR$/calendar.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendar.h" beforeDir="false" afterPath="$PROJECT_DIR$/calendar.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contact.c" beforeDir="false" afterPath="$PROJECT_DIR$/contact.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contact.h" beforeDir="false" afterPath="$PROJECT_DIR$/contact.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set.c" beforeDir="false" afterPath="$PROJECT_DIR$/set.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set.h" beforeDir="false" afterPath="$PROJECT_DIR$/set.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +109,7 @@
       <workItem from="1701694693659" duration="1317000" />
       <workItem from="1701960660565" duration="11310000" />
       <workItem from="1702031908739" duration="22000" />
-      <workItem from="1702148533349" duration="5277000" />
+      <workItem from="1702148533349" duration="12836000" />
     </task>
     <servers />
   </component>

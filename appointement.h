@@ -29,7 +29,6 @@ typedef struct appt_list {
 
 appt_list* create_apptlist();
 appointement * createAppointment(int day, int month, int year, int hour, int minute, char* purpose);
-void free_appointement(appointement* appt);
 void print_appointement(appointement* appt);
 
 #endif //PROJET_DATASTRUCT_2_APPOINTEMENT_H

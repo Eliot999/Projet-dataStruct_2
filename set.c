@@ -179,45 +179,6 @@ int generaterandom(int min,int max)
     return min + rand() % (max- min +1);
 }
 
-void insertSortedCell2(l_list * list,int value,int level)
-{
-    s_cell *prev = NULL;
-    s_cell *cell = createCell(value, level);
-    s_cell *current = list->heads[level];
-    if (level < 0 )printf(" level too low.");
-    if (level > list->max_level)printf("level too high");
-    while (level>=0)
-    {
-        if(list->heads[level]==NULL)
-        {
-            list->heads[level--]=cell;
-            current=list->heads[level];
-            prev=NULL;
-        }
-        else{
-            if  (current->value > value) {
-                cell->next = list->heads[level];
-                list->heads[level] = cell;
-                current = list->heads[--level];
-                prev=NULL;
-            } else {
-                if (current->next == NULL) {
-                    current->next = cell;
-                    current = current->next[--level];
-                }
-                else if (current->value > value && prev->value < value) {
-                    prev->next[level]=cell;
-                    cell->next[level--]=current;
-                } else {
-                    prev=current;
-                    current = current->next[level];
-
-                }
-            }
-        }
-    }
-
-}
 
 char* scanString(void) {
     char *string = malloc(sizeof(char) * 50);
