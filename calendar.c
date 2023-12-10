@@ -8,6 +8,7 @@ calendar* create_calendarentry(contact Contact)
 }
 
 char* GetContactFromCalendar(calendar cal){
+    //return the name and surname of the contact of the calendar in the form name_surname
     char* name_surname = malloc((strlen(cal.Contact.name)+ strlen(cal.Contact.surname)+2) * sizeof(char));
     for (int i = 0; i < strlen(cal.Contact.surname); i++)
     {
@@ -17,12 +18,14 @@ char* GetContactFromCalendar(calendar cal){
     strcat(name_surname,"_");
     for (int i=0;i< strlen(cal.Contact.name);i++)
     {
+
         name_surname[i] = tolower(cal.Contact.name[i]);
     }
     return name_surname;
 }
 
 c_cell * CreateCalendarCell(calendar* c, int level){
+    //create a cell with the calendar
     c_cell * ccell =malloc(sizeof(s_cell));
     ccell->cal = *c;
     ccell->next = malloc(sizeof(s_cell));
@@ -35,6 +38,7 @@ c_cell * CreateCalendarCell(calendar* c, int level){
 c_l_list* CreateCalendarllist()
 {
     {
+        //create a list of calendar cells
         c_l_list *list = malloc(sizeof(l_list));
         list->max_level = 4;
         list->heads =  calloc(4,sizeof(s_cell));

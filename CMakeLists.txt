@@ -20,4 +20,5 @@ add_executable(Projet_dataStruct_2
         appointement.c
         appointement.h
         calendar.h
-        calendar.c)
+        calendar.c
+        mainpart1.c)

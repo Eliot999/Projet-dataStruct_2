@@ -121,17 +121,17 @@ int main(){
     char *time_lvl0;
     char *time_all_levels;
 
-    for (level = 7; level <= 16; level++) {
+    for (level = 7; level <= 15; level++) {
         l_list *list2 = createnlvllist(level);
         startTimer();
-        for (int i = 0; i <= 10000; i++) {
+        for (int i = 0; i <= 100000; i++) {
             int x = generaterandom(1, (pow(2, level) - 1));
             classicsearch(list2, x);
         }
         stopTimer();
         time_lvl0 = getTimeAsString();
         startTimer();
-        for (int i = 0; i <= 10000; i++) {
+        for (int i = 0; i <= 100000; i++) {
             int x = generaterandom(1, (pow(2, level) - 1));
             advancedsearch(*list2, x);
         }

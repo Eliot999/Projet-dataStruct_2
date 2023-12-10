@@ -2,7 +2,7 @@
 s_cell * createCell(int value, int level){
     s_cell * cell = (s_cell *) malloc(sizeof(s_cell));
     cell->value = value;
-    cell->next = (s_cell **) calloc(level,sizeof(s_cell));
+    cell->next = (s_cell **) malloc(level*sizeof(s_cell));
     for (int i = 0; i < level; i++) {
         cell->next[i] = NULL;
     }
@@ -12,7 +12,7 @@ s_cell * createCell(int value, int level){
 l_list * createEmptyList(int max_level){
     l_list *list = malloc(sizeof(l_list));
     list->max_level = max_level;
-    list->heads =  calloc(max_level,sizeof(s_cell));
+    list->heads =  malloc(max_level*sizeof(s_cell));
     for(int i = 0; i < max_level; i++){
         list->heads[i] = NULL;
     }
@@ -112,9 +112,10 @@ void displayLevel(l_list list, int lvl) {
 }
 
 int* create_level_array(int n) {
+    //create an array of size 2^n-1 to create after the nlevellist
     int size = pow(2, n) - 1;
     int* levels = malloc(size * sizeof(int));
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++){
         levels[i] = 0;
     }
     for (int step = 2; step <= size; step *= 2) {
@@ -148,6 +149,7 @@ l_list * createnlvllist(int n)
     return nlevellist;
 }
 s_cell* classicsearch(l_list* list, int value) {
+    //goes from the head to the last value and verify if the value is in the list
     s_cell* ptr = list->heads[0];
     while (ptr != NULL) {
         if (ptr->value == value) {
