@@ -1,4 +1,6 @@
-#include "set.h"
+
+#include "string.h"
+#include "ctype.h"
 
 #ifndef PROJET_DATASTRUCT_2_CONTACT_H
 #define PROJET_DATASTRUCT_2_CONTACT_H

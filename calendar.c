@@ -1,6 +1,4 @@
 #include "calendar.h"
-#include "string.h"
-#include "ctype.h"
 calendar* create_calendarentry(contact Contact)
 {
     calendar* calentry= malloc(sizeof(calendar));
@@ -26,7 +24,7 @@ char* GetContactFromCalendar(calendar cal){
 
 c_cell * CreateCalendarCell(calendar* c, int level){
     c_cell * ccell = (s_cell *) malloc(sizeof(s_cell));
-    ccell->cal = c;
+    ccell->cal = *c;
     ccell->next = (s_cell **) calloc(level,sizeof(s_cell));
     for (int i = 0; i < level; i++) {
         ccell->next[i] = NULL;
@@ -48,54 +46,115 @@ c_l_list* CreateCalendarllist()
     }
 }
 
-void insertcell(c_l_list* list,calendar* cal)
-{
-    c_cell* current=list->heads[0];
-    c_cell* prev=NULL;
-    char* s1= GetContactFromCalendar(*cal);
-    if (list->heads[0]==NULL)
-    {
-        c_cell* cell=CreateCalendarCell(cal,3);
-        for(int i=0;i<=3;i++)
-        {
-            list->heads[i]=cell;
-        }
-    }
-    else
-    {
+void insertcell(c_l_list* list, calendar* cal) {
+    char* s1 = GetContactFromCalendar(*cal);
 
-        c_cell* prev=NULL;
-        current=list->heads[3];
-        char* sh= GetContactFromCalendar(current->cal);
-        if(strcmp(s1,sh)<0)
-        {
-            c_cell* cell= CreateCalendarCell(cal,3);
-            for (int i=3;i>=0;i--){
-                cell->next=list->heads[i];
-                list->heads[i]=cell;}
+    if (list->heads[0] == NULL) {
+        c_cell* cell = CreateCalendarCell(cal, 3);
+        for (int i = 0; i <= 3; i++) {
+            list->heads[i] = cell;
         }
-        else {
-            while (current != NULL) {
-                char *s2 = GetContactFromCalendar(prev->cal);
-                char *s3 = GetContactFromCalendar(current->cal);
-                if (strcmp(&s1[0], &s2[0]) > 0 && strcmp(&s1[0], &s3[0]) < 0) {
-                    c_cell *cell = CreateCalendarCell(cal, 3);
-                    prev->next = cell;
-                    cell->next = current;
-                    return;
-                } else {
-                    prev = current;
-                    current = current->next;
+        return;
+    }
+
+    c_cell* current = list->heads[3];
+    c_cell* prev = NULL;
+    char* sh = GetContactFromCalendar(current->cal);
+
+    if (strcmp(s1, sh) < 0) {
+        c_cell* cell = CreateCalendarCell(cal, 3);
+        for (int i = 3; i >= 0; i--) {
+            cell->next = list->heads[i];
+            list->heads[i] = cell;
+        }
+        return;
+    }
+
+    while (current != NULL) {
+        char* s2 = GetContactFromCalendar(prev->cal);
+        char* s3 = GetContactFromCalendar(current->cal);
+
+        if (strcmp(s1, s2) > 0 && strcmp(s1, s3) < 0) {
+            c_cell* cell = CreateCalendarCell(cal, 3);
+            prev->next = cell;
+            cell->next = current;
+
+            for (int i = 0; i <= 2; i++) {
+                current = list->heads[i];
+                prev = NULL;
+
+                while (current != NULL) {
+                    char* s2 = GetContactFromCalendar(prev->cal);
+                    char* s3 = GetContactFromCalendar(current->cal);
+
+                    if (strcmp(s1, s2) > 0 && strcmp(s1, s3) < 0) {
+                        c_cell* cell = CreateCalendarCell(cal, 3);
+                        prev->next = cell;
+                        cell->next = current;
+                    } else if (current->next == NULL && strcmp(s1, s3) > 0) {
+                        c_cell* cell = CreateCalendarCell(cal, 3);
+                        current->next = cell;
+                    } else {
+                        prev = current;
+                        current = current->next;
+                    }
                 }
             }
+            return;
+        } else if (current->next == NULL && strcmp(s1, s3) > 0) {
+            c_cell* cell = CreateCalendarCell(cal, 3);
+            current->next = cell;
+
+            for (int i = 0; i <= 2; i++) {
+                current = list->heads[i];
+                prev = NULL;
+
+                while (current != NULL) {
+                    char* s2 = GetContactFromCalendar(prev->cal);
+                    char* s3 = GetContactFromCalendar(current->cal);
+
+                    if (strcmp(s1, s2) > 0 && strcmp(s1, s3) < 0) {
+                        c_cell* cell = CreateCalendarCell(cal, 3);
+                        prev->next = cell;
+                        cell->next = current;
+                    } else if (current->next == NULL && strcmp(s1, s3) > 0) {
+                        c_cell* cell = CreateCalendarCell(cal, 3);
+                        current->next = cell;
+                    } else {
+                        prev = current;
+                        current = current->next;
+                    }
+                }
+            }
+            return;
+        } else {
+            prev = current;
+            current = current->next;
         }
-
-        //first check if there is already the first letter in the level 3 linked list if not insert level 0 1 2 3
-        //second insert sorted level 0 1 2 all the contacts that have the same 1st letters but a different second
-        //third step insert sorted level 0 1 all of those having the first 2 letters in common but 3rd different
-        //fourth insert sorted level 0 all the cells
-
-
-
     }
 }
+
+void displayCalendarList(c_l_list list)
+{
+    for (int i = 0; i < 4; i++) {
+        printf("list_head_%d @-]-->", i);
+
+        s_cell *cell = list.heads[i];
+        while (cell != NULL) {
+            printf("[%d|@-]-->", cell->value);
+            cell = cell->next[i];
+        }
+
+        printf("NULL\n");
+    }
+}
+}
+
+
+
+//first check if there is already the first letter in the level 3 linked list if not insert level 0 1 2 3
+//second insert sorted level 0 1 2 all the contacts that have the same 1st letters but a different second
+//third step insert sorted level 0 1 all of those having the first 2 letters in common but 3rd different
+//fourth insert sorted level 0 all the cells
+
+

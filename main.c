@@ -2,9 +2,8 @@
 #include "diary.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-#include <stdio.h>
-
+#include "calendar.h"
+/*
 int printMenuAndGetChoice() {
     int choice;
 
@@ -87,7 +86,7 @@ int validateLoadAppointmentsInput(char* filename) {
 }
 
 
-
+*/
 int main(){
     /*
     l_list * list = createEmptyList(5);
@@ -106,13 +105,9 @@ int main(){
     //displayLevel(*list,0);
     //classicsearch(list,6);
     //simpledisplayList(*list2);
-    */
+
 
     //PART 2
-
-
-
-
 
 
     FILE *log_file = fopen("log.txt", "w");
@@ -151,5 +146,12 @@ int main(){
     }
 
     fclose(log_file);
+    */
+    char* s1=scanString();
+    char* s2=scanString();
+    contact* ctcte= create_contact(s1,s2);
+    calendar* cal= create_calendarentry(*ctcte);
+
+
     return 0;
 }
